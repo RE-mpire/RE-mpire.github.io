@@ -10,6 +10,7 @@
 
 html {
   font-size: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -57,11 +59,6 @@ header {
 .char {
   will-change: transform
 }
-
-.char.scrambled {
-  /* color: gray; */
-}
-
 /* end text effect */
 
 
@@ -182,7 +179,6 @@ header {
 }
 
 .menu__wrap {
-  /* visibility: hidden; */
   position: absolute;
   top: 0;
   left: 0;
@@ -190,6 +186,9 @@ header {
   width: 100%;
   justify-content: flex-end;
   gap: 20px;
+  transition: 
+    visibility 0.3s linear;
+  opacity: 1;
 }
 
 @media (max-width: 767px) {
@@ -198,11 +197,13 @@ header {
     visibility: hidden;
     transform: translate(-100%, 0);
     gap: 0;
+    opacity: 0;
   }
 }
 
 .menu--open .menu__wrap {
   visibility: visible;
+  opacity: 1
 }
 
 .menu__item {
@@ -222,11 +223,14 @@ header {
   display: none;
   background: rgba(0, 0, 0, 0.95);
   z-index: 1999;
+  transition: opacity 0.3s ease;
+  opacity: 0;
 }
 
 @media (max-width: 767px) {
   #overlay.overlay--active {
     display: block;
+    opacity: 1;
   }
 }
 
