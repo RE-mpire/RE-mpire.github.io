@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ಠ_ಠ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="none,noimageindex,noarchive,nositelinkssearchbox">
+</head>
+
+<body>
+  <div id="overlay"></div> 
+  <header class="header">
+    <div class="header__grid">
+
+      <a href="/" class="header__title">KYLE YANG</a>
+
+      <div class="menu">
+        <div class="menu__toggle js-menu-toggle">
+          <div class="menu__toggle__icon">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="menu__wrap">
+          <a href="/blog/" class="menu__item"><h5>Blog</h5></a>
+          <a href="/git/" class="menu__item"><h5>GitHub</h5></a>
+          <a href="/projects/" class="menu__item"><h5>Projects</h5></a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <script>
+    const toggle = document.querySelector('.js-menu-toggle');
+    const menu = document.querySelector('.menu');
+    const overlay = document.getElementById('overlay');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('menu--open');
+      overlay.classList.toggle('overlay--active');
+    });
+
+  </script>
+
+</body>
+</html>
