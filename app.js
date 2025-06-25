@@ -1,5 +1,5 @@
-import { Router } from './router.js';
-import { enableTextScramble } from './text.js';
+import { Router } from './lib/router.js';
+import { enableTextScramble } from './lib/textScramble.js';
 
 var App = {};
 
@@ -22,9 +22,9 @@ App.init = function () {
 document.addEventListener('DOMContentLoaded', function () {
   if (App) App.init();
 
-  const toggle = document.querySelector('.js-menu-toggle');
+  const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
-  const overlay = document.getElementById('overlay');
+  const overlay = document.getElementById('overlay-bg');
 
   toggle.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
