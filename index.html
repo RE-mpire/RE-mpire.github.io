@@ -5,8 +5,9 @@
     <title>ಠ_ಠ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
     <meta name="robots" content="none,noimageindex,noarchive,nositelinkssearchbox">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="/app.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
   <header class="header">
     <div class="header__grid">
 
-      <a href="/" class="header__title">KYLE YANG</a>
+      <a data-route href="/" class="header__title">KYLE YANG</a>
 
       <div class="menu">
         <div class="menu__toggle js-menu-toggle">
@@ -24,31 +25,20 @@
         </div>
 
         <div class="menu__wrap">
-          <a href="/blog/" class="menu__item"><h5>Blog</h5></a>
-          <a href="/git/" class="menu__item"><h5>GitHub</h5></a>
-          <a href="/projects/" class="menu__item"><h5>Projects</h5></a>
+          <a data-route href="/blog" class="menu__item"><h5>Blog</h5></a>
+          <a href="https://github.com/RE-mpire" class="menu__item"><h5>GitHub</h5></a>
+          <a data-route href="/projects" class="menu__item"><h5>Projects</h5></a>
         </div>
       </div>
 
     </div>
   </header>
 
-  <script>
-    const toggle = document.querySelector('.js-menu-toggle');
-    const menu = document.querySelector('.menu');
-    const overlay = document.getElementById('overlay');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('menu--open');
-      overlay.classList.toggle('overlay--active');
-    });
-
-  </script>
-
-  <div class="text-block">
-    <p class="scramble">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div id="content">
+    <div class="text-block">
+      <p class="scramble">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <script type="module" src="text.js"></script>
+    </div>
   </div>
-  <script src="text.js"></script>
-
 </body>
 </html>
