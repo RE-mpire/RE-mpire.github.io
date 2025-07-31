@@ -19,3 +19,27 @@ document.querySelectorAll('[class*="spotlight-container"]').forEach(el => {
   });
 });
 
+const stalker = document.getElementById('STALKER');
+const stalkerLink = stalker.querySelector('.stalker-link');
+// Move stalker under mouse
+document.addEventListener('mousemove', (e) => {
+  stalker.style.transform = `translate(${e.clientX}px, ${e.clientY + 24}px)`;
+});
+// Update stalker link on hover
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('mouseenter', (e) => {
+    const stalkerInner = document.getElementById('STALKER_INNER');
+    stalkerInner.style.opacity = '1';
+    stalkerInner.style.filter = 'blur(0px)';
+    stalkerInner.style.transitionDuration = '0.4s';
+    stalkerLink.textContent = link.href;
+    const width = stalkerInner.offsetWidth;
+    stalkerInner.style.marginLeft = `-${width / 2}px`;
+  });
+  link.addEventListener('mouseleave', (e) => {
+    const stalkerInner = document.getElementById('STALKER_INNER');
+    stalkerInner.style.opacity = '0';
+    stalkerInner.style.filter = 'blur(16px)';
+    stalkerInner.style.transitionDuration = '1.2s';
+  });
+});
