@@ -18,16 +18,6 @@ function initfakeWindow() {
   if (/Windows/i.test(ua)) os = "win";
   else if (/Mac/i.test(ua)) os = "mac";
 
-  // ---- Debugging ----
-  const infoDiv = document.querySelector('.browser-info');
-  if (infoDiv) {
-    infoDiv.innerHTML =
-      `Browser name: ${browser}<br>` +
-      `OS: ${os}<br>` +
-      `User Agent: ${ua}<br>`;
-  }
-  // -------------------
-
   if (browser == "safari") {
     if (os == "windows") {
       console.log("WHAT!?!")
