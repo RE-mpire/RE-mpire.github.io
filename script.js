@@ -1,3 +1,10 @@
+const anchors = [...document.getElementsByTagName("a")];
+anchors.forEach(anchor => {
+  anchor.addEventListener("dragstart", function (e) {
+    e.preventDefault();  // Prevent default drag behavior
+  });
+});
+
 if (!('ontouchstart' in window)) {  // Skip mouse effects on touch devices
 
   /* Spotlight Effect */
@@ -30,7 +37,7 @@ if (!('ontouchstart' in window)) {  // Skip mouse effects on touch devices
     stalker.style.transform = `translate(${e.clientX}px, ${e.clientY + 24}px)`;
   });
   // Update stalker link on hover
-  document.querySelectorAll('a').forEach(link => {
+  anchors.forEach(link => {
     // Skip with class no-stalker
     if (link.classList.contains('no-stalker')) return;
     link.addEventListener('mouseenter', (e) => {
