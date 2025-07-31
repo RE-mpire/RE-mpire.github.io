@@ -216,6 +216,41 @@ section.gallery {
   }
 }
 
+#STALKER {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.stalker-inner {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--boarder-light);
+  /* background: rgba(20, 20, 20, 0.8); */
+  background-color: hsla(0, 0%, 6%, .8);
+  padding: 0.5rem 0.75rem;
+  opacity: 0;
+  backdrop-filter: blur(8px);
+  filter: blur(16px);
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  margin-left: -112px;
+}
+
+.stalker-link {
+  font-size: 0.75rem;
+  color: var(--secondary);
+}
+
+.stalker-icon {
+  width: 1rem;
+  height: auto;
+  color: var(--secondary);
+}
+
 .button,
 .button-lg {
   display: flex;
