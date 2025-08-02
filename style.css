@@ -367,6 +367,7 @@ p {
   filter: grayscale(100%);
   transition-duration: 1s;
   transition-timing-function: var(--ease-fn);
+  list-style: none;
 
   &:hover {
     filter: grayscale(0%);
