@@ -1,19 +1,12 @@
 import { Router } from './lib/router.js';
-import { enableTextScramble } from './lib/textScramble.js';
-import { loadComponent, createComponent } from './lib/components.js';
-import { initfakeWindow } from './fakeWindow.js';
+import { initPageContent } from './script.js';
 
 var App = {};
 
-/* Initilization function */
 App.init = function () {
   // Initialize static routes
-  Router.addRoute('/blog', function () { });
-  Router.addRoute('/projects', function () { });
-  Router.addRoute('/', function () { 
-    enableTextScramble();
-    initfakeWindow(); // Initialize the fake window component
-   });
+  Router.addRoute('/', initPageContent);
+  Router.addRoute('/pages/blog/placeholder', initPageContent);
 
   // Load the initial route based on the current URL
   Router.loadRoute(location.pathname);
@@ -24,19 +17,17 @@ App.init = function () {
   });
 };
 
+/* Nothing to see here */
+function easterEgg() {
+  var msg = "      ___           ___           ___           ___                     ___           ___     \r\n     /  /\\         /  /\\         /__/\\         /  /\\      ___          /  /\\         /  /\\    \r\n    /  /::\\       /  /:/_       |  |::\\       /  /::\\    /  /\\        /  /::\\       /  /:/_   \r\n   /  /:/\\:\\     /  /:/ /\\      |  |:|:\\     /  /:/\\:\\  /  /:/       /  /:/\\:\\     /  /:/ /\\  \r\n  /  /:/~/:/    /  /:/ /:/_   __|__|:|\\:\\   /  /:/~/:/ /__/::\\      /  /:/~/:/    /  /:/ /:/_ \r\n /__/:/ /:/___ /__/:/ /:/ /\\ /__/::::| \\:\\ /__/:/ /:/  \\__\\/\\:\\__  /__/:/ /:/___ /__/:/ /:/ /\\\r\n \\  \\:\\/:::::/ \\  \\:\\/:/ /:/ \\  \\:\\~~\\__\\/ \\  \\:\\/:/      \\  \\:\\/\\ \\  \\:\\/:::::/ \\  \\:\\/:/ /:/\r\n  \\  \\::/~~~~   \\  \\::/ /:/   \\  \\:\\        \\  \\::/        \\__\\::/  \\  \\::/~~~~   \\  \\::/ /:/ \r\n   \\  \\:\\        \\  \\:\\/:/     \\  \\:\\        \\  \\:\\        /__/:/    \\  \\:\\        \\  \\:\\/:/  \r\n    \\  \\:\\        \\  \\::/       \\  \\:\\        \\  \\:\\       \\__\\/      \\  \\:\\        \\  \\::/   \r\n     \\__\\/         \\__\\/         \\__\\/         \\__\\/                   \\__\\/         \\__\\/    \r\n\r\n \n\n  REVERSE ENGINEERING EMPIRE | RE-MPIRE"; console.log(msg);
+}
+
+// Initialize the app when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  if (App) App.init(); // Initialize the app
+  if (location.pathname.includes('404')) return;
+  if (App) App.init();
 
-  /* Navigation Menu Toggle*/
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-  const overlay = document.getElementById('overlay-bg');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('menu--open');
-    overlay.classList.toggle('overlay--active');
-  });
-  /* End Navigation Menu Toggle*/
+  easterEgg();
 });
 
 export { App };
