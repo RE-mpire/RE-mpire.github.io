@@ -103,7 +103,7 @@ p {
   text-underline-offset: 4px;
 }
 
-.custom-link {
+.link {
   border-radius: 8px;
   border: 1px solid transparent;
   display: inline-block;
