@@ -50,7 +50,6 @@ h2 {
   font-weight: 500;
   line-height: 1.82;
   color: var(--primary);
-  margin-top: 88px;
 }
 
 p {
@@ -153,7 +152,7 @@ p {
   color: var(--secondary);
 }
 
-.about-me {
+.subtitle {
   margin-top: 2rem;
   margin-bottom: 4rem;
   line-height: 1.7;
@@ -176,6 +175,7 @@ p {
 .site-footer {
   border-top: 1px solid var(--bd-light);
   padding-top: 2rem;
+  margin-top: 4rem;
   font-size: 0.9rem;
   color: var(--secondary);
 
@@ -288,7 +288,7 @@ p {
 }
 
 .button:active,
-.custom-link:active,
+.link:active,
 .gallery-item:has(.gallery-link:active) {
   transform: scale(0.98);
   transition-duration: 0.12s;
