@@ -12,9 +12,9 @@
   scroll-behavior: smooth;
 }
 
-  .flex {
-    display: flex;
-  }
+.flex {
+  display: flex;
+}
 
 /* Reset styles */
 *,
@@ -497,5 +497,90 @@ p {
     height: auto;
     width: 20px;
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.scroller {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-gutter: stable both-edges;
+  scrollbar-width: thin;
+  /* Offset horizontal scrollbar down by 1vw using padding and negative margin */
+  padding-bottom: 1vw;
+  margin-bottom: -1vw;
+}
+
+.code-block {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid var(--bd-light);
+  background-color: var(--dark);
+  padding: 1.5rem;
+  color: var(--primary);
+  font-size: 14.5px;
+  line-height: 1.42;
+  padding-right: 4rem;
+  margin-top: 1.5rem;
+
+  svg {
+    color: var(--secondary);
+    height: 1rem;
+    width: 1rem;
+    ;
+    vertical-align: middle;
+  }
+
+  .code {
+    height: 100%;
+    max-height: calc(100svh - (12svh + 44px + 32px));
+    width: 100%;
+    font-size: 13.5px;
+    line-height: 1.42;
+  }
+}
+
+.copy-ctrls {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  gap: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--bd-light);
+  background: var(--btn-color);
+  color: var(--secondary);
+  padding: 0.5rem 0.75rem;
+  backdrop-filter: blur(8px);
+  transition-duration: 0.4s;
+  transition-timing-function: var(--ease-fn);
+  filter: blur(16px);
+  opacity: 0;
+  transform: translateX(16px);
+}
+
+.copy-btn {
+  border-radius: 8px;
+  border: 1px solid var(--bd-dark);
+  background: var(--btn-color);
+  padding: 0.625rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  transition-timing-function: var(--ease-fn);
+
+  &:hover {
+    background-color: var(--btn-hover);
+    scale: 1.04;
+    transition-duration: 0.12s;
+  }
+
+  &:active {
+    scale: 0.98;
   }
 }
