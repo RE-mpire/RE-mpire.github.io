@@ -1,4 +1,5 @@
 import { Router } from './lib/router.js';
+import { initCopyButtons } from './lib/copy.js';
 import { initPageContent } from './script.js';
 
 var App = {};
@@ -6,6 +7,7 @@ var App = {};
 function initPage(content) {
   // Initialize the page content
   initPageContent(content);
+  initCopyButtons();
 }
 
 App.init = function () {
