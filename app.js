@@ -3,10 +3,17 @@ import { initPageContent } from './script.js';
 
 var App = {};
 
+function initPage(content) {
+  // Initialize the page content
+  initPageContent(content);
+}
+
 App.init = function () {
   // Initialize static routes
-  Router.addRoute('/', initPageContent);
-  Router.addRoute('/pages/blog/placeholder', initPageContent);
+  Router.addRoute('/', initPage);
+  Router.addRoute('/pages/blog/placeholder', initPage);
+  Router.addRoute('/pages/projects', initPage);
+  Router.addRoute('/pages/tools', initPage);
 
   // Load the initial route based on the current URL
   Router.loadRoute(location.pathname);

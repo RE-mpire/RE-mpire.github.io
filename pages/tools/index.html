@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="none,noimageindex,noarchive,nositelinkssearchbox">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -34,43 +34,56 @@
       </a>
     </header>
 
-    <main>
-      <div class=" article-card">
-        <p class="article-title">Uh Oh. 404</p>
-        <p class="article-desc">The page you are looking for does not exist</p>
-        <div class="article-demo" style="font-size: 3rem">404</div>
-        <div class="glint"></div>
-      </div>
+    <div id="content">
+      <main>
+        <section class="intro darken">
+          <p>
+            Reverse Eng. Empire is my personal lab, a curated space to showcase my
+            <a class="dotted-underline link" href="/pages/projects">Projects</a>,
+            <a class="dotted-underline link" href="/pages/tools">Tools</a>, and
+            experiments centered around reverse engineering, hardware hacking, and digital privacy.
+          </p>
+        </section>
 
+        <section class="subtitle darken">
+          <h2>Tools</h2>
+          <ul style="padding-left: 1rem;margin-top: 1rem;">
+            <li><strong>Comming Soon:</strong> More comming soon...</li>
+            <li><strong>August 12:</strong> Launched <a class="dotted-underline link" link-external
+                href="https://re-mpire.github.io/JavaScript-Inject-Detection/" rel="noreferrer" target="_blank">
+                JavaScript Inject Detector.</a></li>
+          </ul>
+        </section>
+    </div>
 
-      <footer class="site-footer">
-        <p>Made by ◈ <strong>Ҝㄚㄥ乇</strong> ✌️</p>
-        <p>
-          Since 2025, made with <strong>Vanilla JS</strong> and thoughful design decisions.
-        </p>
-        <div class="flex">
-          <a class="button button--lg" href="#">
-            <span class="button__label">Back to Top!</span>
-            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 14 4 9l5-5"></path>
-              <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"></path>
-            </svg>
-          </a>
-        </div>
-      </footer>
-
-      <div id="STALKER">
-        <div class="stalker-inner" id="STALKER_INNER">
-          <span class="stalker-link"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stalker-icon">
-            <path d="M7 7h10v10"></path>
-            <path d="M7 17 17 7"></path>
+    <footer class="site-footer">
+      <p>Made by ◈ <strong>Ҝㄚㄥ乇</strong> ✌️</p>
+      <p>
+        Since 2025, made with <strong>Vanilla JS</strong> and thoughful design decisions.
+      </p>
+      <div class="flex">
+        <a class="button button--lg" href="#">
+          <span class="button__label">Back to Top!</span>
+          <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 14 4 9l5-5"></path>
+            <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"></path>
           </svg>
-        </div>
+        </a>
       </div>
-      <script type="module" src="script.js"></script>
+    </footer>
+
+    <div id="STALKER">
+      <div class="stalker-inner" id="STALKER_INNER">
+        <span class="stalker-link"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stalker-icon">
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </div>
+    </div>
+    <script type="module" src="/script.js"></script>
   </div>
 </body>
 

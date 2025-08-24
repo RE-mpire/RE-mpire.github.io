@@ -12,6 +12,10 @@
   scroll-behavior: smooth;
 }
 
+  .flex {
+    display: flex;
+  }
+
 /* Reset styles */
 *,
 ::after,
@@ -46,16 +50,11 @@ h2 {
   font-weight: 500;
   line-height: 1.82;
   color: var(--primary);
-  margin-top: 88px;
 }
 
 p {
   font-size: 0.95rem;
   margin-top: 1.5rem;
-}
-
-.flex {
-  display: flex;
 }
 
 .page-container {
@@ -103,7 +102,7 @@ p {
   text-underline-offset: 4px;
 }
 
-.custom-link {
+.link {
   border-radius: 8px;
   border: 1px solid transparent;
   display: inline-block;
@@ -137,7 +136,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   justify-content: center;
 }
 
@@ -153,7 +152,7 @@ p {
   color: var(--secondary);
 }
 
-.about-me {
+.subtitle {
   margin-top: 2rem;
   margin-bottom: 4rem;
   line-height: 1.7;
@@ -176,6 +175,7 @@ p {
 .site-footer {
   border-top: 1px solid var(--bd-light);
   padding-top: 2rem;
+  margin-top: 4rem;
   font-size: 0.9rem;
   color: var(--secondary);
 
@@ -288,13 +288,13 @@ p {
 }
 
 .button:active,
-.custom-link:active,
+.link:active,
 .gallery-item:has(.gallery-link:active) {
   transform: scale(0.98);
   transition-duration: 0.12s;
 }
 
-.artical-card {
+.article-card {
   position: relative;
   border-radius: 0.75rem;
   border: 1px solid var(--bd-light);
@@ -312,21 +312,21 @@ p {
   }
 }
 
-.artical-title {
+.article-title {
   font-weight: 500;
   line-height: 1.82;
   color: var(--primary);
   font-size: 16px;
 }
 
-.artical-desc {
+.article-desc {
   margin-top: 0.25rem;
   font-size: 14.5px;
   line-height: 1.82;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.artical-demo {
+.article-demo {
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -341,7 +341,7 @@ p {
     repeating-radial-gradient(circle at 50% 50%, rgb(45, 45, 45) 0, rgb(30, 30, 30) 32px);
 }
 
-.artical-date {
+.article-date {
   width: 100%;
   text-align: right;
   line-height: 1.82;
@@ -350,7 +350,7 @@ p {
   margin-top: 0;
 }
 
-.shine {
+.glint {
   position: absolute;
   left: 0;
   right: 0;
@@ -471,4 +471,31 @@ p {
   inset: 0;
   margin: auto;
   pointer-events: none;
+}
+
+.link-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s, color 0.2s, transform 0.12s;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.82;
+    color: inherit;
+  }
+
+  svg {
+    margin-left: 0.75rem;
+    height: auto;
+    width: 20px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 }

@@ -9,6 +9,7 @@ function disableLinkDrag(body) {
   });
 }
 
+/* === Spotlight Effect === */
 // Initialize spotlight effects on elements with class 'spotlight-container'
 // radius can be set via class name i.e. 'spotlight-container-500'
 function initSpotlights(body) {
@@ -16,7 +17,7 @@ function initSpotlights(body) {
     const match = el.className.match(/spotlight-container-(\d+)/);
     const radius = match ? parseInt(match[1], 10) : 500;  // Default radius if not set
 
-    function updateSpotlight(x, y) {
+    const updateSpotlight = (x, y) => {  // moves the spotlight to (x, y)
       el.querySelectorAll('.spotlight').forEach(g => {
         const rect = g.getBoundingClientRect();
         const localX = x - rect.left;
@@ -30,8 +31,10 @@ function initSpotlights(body) {
     });
   });
 }
+/* === End Spotlight Effect === */
 
-// Display link href on hover
+/* === Stalker Link Effect === */
+// Elements display a floating label that follows the cursor when hovering over links
 const stalker = document.getElementById('STALKER');
 const stalkerInner = stalker.querySelector('#STALKER_INNER');
 const stalkerLink = stalker.querySelector('.stalker-link');
@@ -41,43 +44,54 @@ document.addEventListener('mousemove', (e) => {
   stalker.style.transform = `translate(${e.clientX}px, ${e.clientY + 24}px)`;
 });
 
+function showStalker(e, link) {
+  stalkerInner.style.opacity = '1';
+  stalkerInner.style.filter = 'blur(0px)';
+  stalkerInner.style.transitionDuration = '.4s';
+  stalkerLink.textContent = link.href.replace(/^https?:\/\//, '');
+  stalkerInner.style.marginLeft = `-${stalkerInner.offsetWidth / 2}px`;
+  stalker.style.transform = `translate(${e.clientX}px, ${e.clientY + 24}px)`;
+}
+
+function hideStalker() {
+  stalkerInner.style.opacity = '0';
+  stalkerInner.style.filter = 'blur(16px)';
+  stalkerInner.style.transitionDuration = '1.2s';
+}
+
 function updateStalkerLinks(body) {
-  function showStalker(e, link) {
-    stalkerInner.style.opacity = '1';
-    stalkerInner.style.filter = 'blur(0px)';
-    stalkerInner.style.transitionDuration = '.4s';
-    stalkerLink.textContent = link.href.replace(/^https?:\/\//, '');
-    stalkerInner.style.marginLeft = `-${stalkerInner.offsetWidth / 2}px`;
-    stalker.style.transform = `translate(${e.clientX}px, ${e.clientY + 24}px)`;
-  }
-
-  function hideStalker() {
-    stalkerInner.style.opacity = '0';
-    stalkerInner.style.filter = 'blur(16px)';
-    stalkerInner.style.transitionDuration = '1.2s';
-  }
-
   body.querySelectorAll('a:not(.no-stalker)').forEach(link => {
     link.onmouseenter = e => showStalker(e, link);
     link.onmouseleave = hideStalker;
   })
 }
+/* === End Stalker Link Effect === */
 
-updateStalkerLinks(document);
-
+/* === Initialize the page content here === */
 if ('ontouchstart' in window) {  // Skip mouse effects for touch input
+  let touchCanceled = false;
+
   document.addEventListener('touchstart', function (e) {
-    e.preventDefault();  // Stop touch from generating mouse events
-  }, { passive: false });
+    touchCanceled = false;
+  });
 
   document.addEventListener('touchend', function (e) {
-    // Bypass 300ms delay for simulated click events
     e.preventDefault();
-    e.target.click();
+    const link = e.target.closest('a');
+    if (link && !touchCanceled) {
+      link.click();
+    }
   }, { passive: false });
+
+  document.addEventListener('touchmove', function () {
+    touchCanceled = true;
+  });
 }
 
-// window.initPageContent = function (el) {
+updateStalkerLinks(document);
+disableLinkDrag(document);
+/* === End Initialization === */
+
 export function initPageContent(el) {
   disableLinkDrag(el);
   initSpotlights(el);
