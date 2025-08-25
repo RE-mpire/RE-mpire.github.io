@@ -21,17 +21,17 @@ import { windowManager, makeDraggable, maximizeWindow, hideWindow } from '/lib/w
         template: function ({ title, domainName, domainPath, iframeSrc }) {
             return `
         <div class="mac-firefox window">
-            <div class="title-bar-width">
-            <div class="title-bar outer yosemite">
+            <div class="titlebar-width">
+            <div class="titlebar outer yosemite">
                 <span class="dots">
                 <div class="dot red exit"></div>
                 <div class="dot amber minimize"></div>
                 <div class="dot green maximize"></div>
                 </span>
-                <span class="logo-description">${title}</span>
+                <span class="titlebar-text">${title}</span>
             </div>
             <div class="url-bar">
-                <img src="./assets/browser/ssl.svg" width="20px" height="20px" class="ssl-padlock">
+                <img src="/assets/browser/ssl.svg" width="20px" height="20px" class="ssl-padlock">
                 <span class="domain-name">${domainName}</span>
                 <span class="domain-path">${domainPath}</span>
             </div>
@@ -47,7 +47,7 @@ import { windowManager, makeDraggable, maximizeWindow, hideWindow } from '/lib/w
             windowManager.windows.push(windowElem);
 
             // Add drag functionality
-            const titleElem = windowElem.querySelector('.title-bar');
+            const titleElem = windowElem.querySelector('.titlebar');
             makeDraggable(windowElem, titleElem);
 
             // Add exit functionality
