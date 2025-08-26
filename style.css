@@ -294,7 +294,18 @@ p {
   transition-duration: 0.12s;
 }
 
-.article-card {
+.inline-code {
+  display: inline-block;
+  margin: 0 0.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--bd-dark);
+  background-color: var(--btn-color);
+  padding: 0 0.5rem;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.card {
   position: relative;
   border-radius: 0.75rem;
   border: 1px solid var(--bd-light);
@@ -312,6 +323,17 @@ p {
   }
 }
 
+.card-content {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--bd-dark);
+  padding: 9rem 0;
+  font-weight: 500;
+}
+
 .article-title {
   font-weight: 500;
   line-height: 1.82;
@@ -327,17 +349,16 @@ p {
 }
 
 .article-demo {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   display: flex;
   width: 100%;
   justify-content: center;
   border-radius: 10px;
   border: 1px solid var(--bd-dark);
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+  padding: 9rem 0;
   font-weight: 500;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgb(15, 15, 15) 80%),
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgb(15, 15, 15) 80%),
     repeating-radial-gradient(circle at 50% 50%, rgb(45, 45, 45) 0, rgb(30, 30, 30) 32px);
 }
 
@@ -437,8 +458,7 @@ p {
   border-radius: 8px;
   border: 1px solid var(--bd-dark);
   background-color: var(--btn-color);
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding: 14px 0;
   text-align: center;
   font-size: 0.95rem;
   font-weight: 500;
@@ -482,8 +502,7 @@ p {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   transition: background 0.2s, color 0.2s, transform 0.12s;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+  padding: 0 .25rem;
 
   span {
     font-size: 1rem;
@@ -516,10 +535,10 @@ p {
   border: 1px solid var(--bd-light);
   background-color: var(--dark);
   padding: 1.5rem;
+  padding-right: 4rem;
   color: var(--primary);
   font-size: 14.5px;
   line-height: 1.42;
-  padding-right: 4rem;
   margin-top: 1.5rem;
 
   svg {
