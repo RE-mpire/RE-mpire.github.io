@@ -1,6 +1,7 @@
 import { Router } from './lib/router.js';
 import { initCopyButtons } from './lib/copy.js';
 import { initPageContent } from './script.js';
+import './lib/animatedSvg.js';
 
 var App = {};
 
