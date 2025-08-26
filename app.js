@@ -1,12 +1,12 @@
 import { Router } from './lib/router.js';
 import { initCopyButtons } from './lib/copy.js';
-import { initPageContent } from './script.js';
+import { initPageContent } from './lib/effects.js';
 import './lib/animatedSvg.js';
 
 var App = {};
 
+// Initialize the page content
 function initPage(content) {
-  // Initialize the page content
   initPageContent(content);
   initCopyButtons();
 }
