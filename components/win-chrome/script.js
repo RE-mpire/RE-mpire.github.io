@@ -21,11 +21,11 @@ import { windowManager, makeDraggable, maximizeWindow, hideWindow } from '/lib/w
         template: function ({ title, domainName, domainPath, iframeSrc }) {
             return `
         <div class="win-chrome window">
-        <div class="title-bar-width">
-            <div class="title-bar">
+        <div class="titlebar-width">
+            <div class="titlebar">
                 <div style="margin-top:5px;">
-                    <img src="./assets/browser/logo.svg" width="20px" height="15px" class="logo">
-                    <span class="logo-description">${title}</span>
+                    <img src="/assets/browser/logo.svg" width="20px" height="15px" class="site-favicon">
+                    <span class="titlebar-text">${title}</span>
                 </div>
                 <div>
                     <span class="minimize">&#8212;</span>
@@ -34,7 +34,7 @@ import { windowManager, makeDraggable, maximizeWindow, hideWindow } from '/lib/w
                 </div>
             </div>
             <div class="url-bar">
-                <img src="./assets/browser/ssl.svg" width="20px" height="20px" class="ssl-padlock">
+                <img src="/assets/browser/ssl.svg" width="20px" height="20px" class="ssl-padlock">
                 <span class="domain-name">${domainName}</span>
                 <span class="domain-path">${domainPath}</span>
             </div>
@@ -50,7 +50,7 @@ import { windowManager, makeDraggable, maximizeWindow, hideWindow } from '/lib/w
             windowManager.windows.push(windowElem);
 
             // Add drag functionality
-            const titleElem = windowElem.querySelector('.title-bar');
+            const titleElem = windowElem.querySelector('.titlebar');
             makeDraggable(windowElem, titleElem);
 
             // Add exit functionality
